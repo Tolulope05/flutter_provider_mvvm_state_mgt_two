@@ -1,6 +1,8 @@
+// ignore: slash_for_doc_comments
 /**
  * Handle App Exceptions.
  * - This handles all error in the app
+ * - Most error scenarios in the app ha been highlighted.
  */
 
 class AppExceptions implements Exception {
