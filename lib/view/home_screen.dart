@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/utils/general_utils.dart';
+import 'package:flutter_provider_mvvm_state_mgt_two/utils/routes/routes_name.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -31,6 +32,12 @@ class HomeScreen extends StatelessWidget {
                 Utils.snackBar("Hello from Tolucoder!", context);
               },
               child: const Text("Show snack Bar"),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, RoutesName.details);
+              },
+              child: const Text("Navigate to details"),
             ),
           ],
         ),

@@ -7,19 +7,7 @@ class Loginscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: InkWell(
-          onTap: () {
-            // Navigator.push(
-            //     context, MaterialPageRoute(builder: (_) => const HomeScreen()));
-
-            Navigator.pushNamed(context, RoutesName.home);
-          },
-          child: const Center(
-            child: Text("Loginscreen"),
-          ),
-        ),
-      ),
+      body: SafeArea(child: Column()),
     );
   }
 }
