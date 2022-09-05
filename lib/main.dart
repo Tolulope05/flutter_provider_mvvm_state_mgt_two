@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_mvvm_state_mgt_two/res/colors.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/utils/routes/routes_name.dart';
 
 import 'utils/routes/routes.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'MVVM MASTERY WITH PROVIDER',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.cyan,
       ),
       initialRoute: RoutesName.login,
       onGenerateRoute: Routes.generateRoute,
