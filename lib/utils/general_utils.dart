@@ -20,15 +20,16 @@ class Utils {
     );
   }
 
-  static void flushErrorMessage(String message, BuildContext context) {
+  static void flushErrorMessage(String message, BuildContext context,
+      {bool success = false}) {
     showFlushbar(
       context: context,
       flushbar: Flushbar(
         message: message,
         flushbarPosition: FlushbarPosition.TOP,
-        backgroundColor: Colors.red,
-        icon: const Icon(
-          Icons.error,
+        backgroundColor: success ? Colors.green : Colors.red,
+        icon: Icon(
+          success ? Icons.tag_faces : Icons.error,
           color: Colors.white,
         ),
         margin: const EdgeInsets.all(5),

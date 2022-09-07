@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/res/components/round_button.dart';
-import 'package:flutter_provider_mvvm_state_mgt_two/utils/routes/routes_name.dart';
+import 'package:flutter_provider_mvvm_state_mgt_two/view_model/auth_view_model.dart';
+import 'package:provider/provider.dart';
 
 import '../utils/general_utils.dart';
+import '../view_model/auth_view_model.dart';
 
 class Loginscreen extends StatelessWidget {
   Loginscreen({Key? key}) : super(key: key);
@@ -15,6 +17,7 @@ class Loginscreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     print("Full Widget rebuild");
+    final authViewModel = Provider.of<AuthViewModel>(context);
     final double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
@@ -70,6 +73,7 @@ class Loginscreen extends StatelessWidget {
               SizedBox(height: height * .05),
               RoundButton(
                   title: "Login",
+                  isLoading: authViewModel.isLoading,
                   onPress: () {
                     if (_emailController.text.isEmpty) {
                       Utils.flushErrorMessage("Please enter email", context);
@@ -79,8 +83,11 @@ class Loginscreen extends StatelessWidget {
                       Utils.flushErrorMessage(
                           "Password must be at least 8 characters", context);
                     } else {
-                      print("API hit");
-                      Navigator.pushReplacementNamed(context, RoutesName.home);
+                      Map data = {
+                        "email": _emailController.text,
+                        "password": _passwordController.text,
+                      };
+                      authViewModel.loginApi(data, context);
                     }
                   }),
             ],

@@ -9,7 +9,7 @@ class AuthRepository {
     try {
       dynamic response =
           await _apiServices.getPOSTApiResponse(AppUrl.loginEndPoint, data);
-      return data;
+      return response;
     } catch (e) {
       rethrow;
     }
@@ -19,7 +19,7 @@ class AuthRepository {
     try {
       dynamic response =
           await _apiServices.getPOSTApiResponse(AppUrl.registerEndPoint, data);
-      return data;
+      return response;
     } catch (e) {
       rethrow;
     }
