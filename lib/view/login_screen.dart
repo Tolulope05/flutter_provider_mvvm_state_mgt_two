@@ -24,6 +24,7 @@ class Loginscreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Login"),
         centerTitle: true,
+        leading: Container(),
       ),
       body: SafeArea(
         child: Padding(
