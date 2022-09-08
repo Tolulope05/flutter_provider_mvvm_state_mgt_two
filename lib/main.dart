@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/utils/routes/routes_name.dart';
+import 'package:flutter_provider_mvvm_state_mgt_two/view_model/movie_list_view_model.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/view_model/user_view_model.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider<AuthViewModel>(create: (_) => AuthViewModel()),
           ChangeNotifierProvider<UserViewModel>(create: (_) => UserViewModel()),
+          ChangeNotifierProvider<MovieListViewModel>(
+            create: (_) => MovieListViewModel(),
+          ),
         ],
         builder: (context, child) {
           return MaterialApp(

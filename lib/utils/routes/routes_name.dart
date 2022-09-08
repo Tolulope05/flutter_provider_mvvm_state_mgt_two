@@ -5,6 +5,6 @@ class RoutesName {
   static const String login = "LOGIN_SCREEN";
 //login screen route name
   static const String home = "HOME_SCREEN";
-//details screen route name
-  static const String details = "DETAILS_SCREEN";
+//movie_list screen route name
+  static const String movieList = "MOVIE_LIST_SCREEN";
 }

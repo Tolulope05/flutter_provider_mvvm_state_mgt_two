@@ -11,6 +11,25 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final userPrefernce = Provider.of<UserViewModel>(context, listen: false);
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          TextButton(
+            onPressed: () {
+              userPrefernce.remove().then((value) {
+                if (value == true) {
+                  Navigator.pushReplacementNamed(context, RoutesName.login);
+                } else {
+                  Utils.snackBar("Error. Something went wrong!", context);
+                }
+              });
+            },
+            child: const Text(
+              "Logout",
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+      ),
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -38,21 +57,9 @@ class HomeScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, RoutesName.details);
+                Navigator.pushNamed(context, RoutesName.movieList);
               },
-              child: const Text("Navigate to details"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                userPrefernce.remove().then((value) {
-                  if (value == true) {
-                    Navigator.pushReplacementNamed(context, RoutesName.login);
-                  } else {
-                    Utils.snackBar("Error. Something went wrong!", context);
-                  }
-                });
-              },
-              child: const Text("Logout"),
+              child: const Text("View Movies"),
             ),
           ],
         ),

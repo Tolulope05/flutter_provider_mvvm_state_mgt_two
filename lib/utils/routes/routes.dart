@@ -4,8 +4,6 @@ import 'package:flutter_provider_mvvm_state_mgt_two/view/home_screen.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/view/login_screen.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/view/splash_screen.dart';
 
-import '../../view/details_screen.dart';
-
 class Routes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -16,10 +14,6 @@ class Routes {
       case RoutesName.login:
         return MaterialPageRoute(
           builder: (BuildContext context) => Loginscreen(),
-        );
-      case RoutesName.details:
-        return MaterialPageRoute(
-          builder: (BuildContext context) => const Detailscreen(),
         );
       case RoutesName.splash:
         return MaterialPageRoute(
