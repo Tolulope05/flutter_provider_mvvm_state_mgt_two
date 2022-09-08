@@ -83,9 +83,13 @@ class Loginscreen extends StatelessWidget {
                       Utils.flushErrorMessage(
                           "Password must be at least 8 characters", context);
                     } else {
+                      // Map data = {
+                      //   "email": _emailController.text,
+                      //   "password": _passwordController.text,
+                      // };
                       Map data = {
-                        "email": _emailController.text,
-                        "password": _passwordController.text,
+                        "email": "eve.holt@reqres.in",
+                        "password": "cityslicka",
                       };
                       authViewModel.loginApi(data, context);
                     }

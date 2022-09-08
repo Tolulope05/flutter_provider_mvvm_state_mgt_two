@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/utils/routes/routes_name.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/view/home_screen.dart';
 import 'package:flutter_provider_mvvm_state_mgt_two/view/login_screen.dart';
+import 'package:flutter_provider_mvvm_state_mgt_two/view/splash_screen.dart';
 
 import '../../view/details_screen.dart';
 
@@ -20,6 +21,9 @@ class Routes {
         return MaterialPageRoute(
           builder: (BuildContext context) => const Detailscreen(),
         );
+      case RoutesName.splash:
+        return MaterialPageRoute(
+            builder: (BuildContext context) => const SplashScreen());
       default:
         return MaterialPageRoute(
           builder: (context) => const Scaffold(
