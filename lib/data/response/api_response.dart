@@ -3,15 +3,15 @@ import 'package:flutter_provider_mvvm_state_mgt_two/data/response/status.dart';
 class ApiResponse<T> {
   Status? status;
   T? data;
-  String? message;
+  String? status_message;
 
-  ApiResponse(this.status, this.data, this.message);
+  ApiResponse(this.status, this.data, this.status_message);
   ApiResponse.loading() : status = Status.LOADING;
-  ApiResponse.completed() : status = Status.COMPLETED;
-  ApiResponse.error() : status = Status.ERROR;
+  ApiResponse.completed(this.data) : status = Status.COMPLETED;
+  ApiResponse.error(this.status_message) : status = Status.ERROR;
 
   @override
   String toString() {
-    return "Status : $status \n Message : $message \n Data: $data";
+    return "Status : $status \n Message : $status_message \n Data: $data";
   }
 }
