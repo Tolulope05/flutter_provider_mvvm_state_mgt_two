@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-MovieList movieListFromJson(String str) => MovieList.fromJson(json.decode(str));
+// MovieList movieListFromJson(String str) => MovieList.fromJson(json.decode(str));
 
 String movieListToJson(MovieList data) => json.encode(data.toJson());
 
