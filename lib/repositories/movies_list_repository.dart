@@ -12,7 +12,7 @@ class MovieRepository {
       dynamic response = await _apiServices
           .getGETApiResponse(AppUrl.moviebaseUrl + AppUrl.getMovieList);
 
-      MovieList movieList = movieListFromJson(response); // This is the problem
+      MovieList movieList = MovieList.fromJson(response);
       print(movieList);
       print("success");
       return movieList;
